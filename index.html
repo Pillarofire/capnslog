@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notebook Prototype</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  document.documentElement.dataset.theme = localStorage.getItem('notebook.theme') ||
+    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+</script>
+</head>
+<body>
+<header id="bar">
+  <strong class="brand">Notebook</strong>
+  <div class="tools" id="tools">
+    <button data-tool="note" title="Click, then click on the page to place">📝 Note</button>
+    <button data-tool="calc">🧮 Calc</button>
+    <button data-tool="draw">✏️ Drawing</button>
+    <button data-tool="repl">⌨️ JS REPL</button>
+    <button data-tool="media">🖼️ Media file</button>
+    <button data-tool="url">🔗 Media URL</button>
+  </div>
+  <div class="right">
+    <span id="status">saved</span>
+    <button id="theme" title="Toggle dark theme">🌙</button>
+    <button id="lock">🔒 Encrypt</button>
+    <button id="clear" title="Delete everything">🗑️</button>
+  </div>
+</header>
+<div id="hint">Pick a tool, then click anywhere on the page to place it. (Double-click empty space = note.)</div>
+
+<main id="page"></main>
+
+<section id="vault" hidden>
+  <pre id="cipher"></pre>
+  <div class="vault-msg"><p>🔒 Content is encrypted</p><button id="unlock">Unlock</button></div>
+</section>
+
+<input type="file" id="file" accept="image/*,video/*,audio/*" hidden>
+
+<dialog id="pass">
+  <form method="dialog" id="passForm">
+    <h3 id="passTitle">Passkey</h3>
+    <input type="password" id="passInput" autocomplete="off" placeholder="Passkey" required>
+    <input type="password" id="passInput2" autocomplete="off" placeholder="Confirm passkey">
+    <p id="passErr" class="err"></p>
+    <menu><button value="cancel" formnovalidate id="passCancel">Cancel</button><button value="ok" id="passOk">OK</button></menu>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>

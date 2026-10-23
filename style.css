@@ -1,0 +1,64 @@
+:root { --bg:#f4f1ea; --card:#fff; --ink:#222; --accent:#2a6df4; --line:#d8d3c6;
+  --panel:#fff; --head:#eee9dc; --dot:#cfc9b8; --muted:#777; color-scheme:light; }
+:root[data-theme=dark] { --bg:#16181d; --card:#22252c; --ink:#e6e6e6; --accent:#5b8cff; --line:#3a3f4a;
+  --panel:#1d2026; --head:#2d313a; --dot:#2c3039; --muted:#9aa0aa; color-scheme:dark; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px system-ui,sans-serif; color:var(--ink); background:var(--bg); }
+button, input, select { font:inherit; }
+button { padding:.35em .7em; border:1px solid var(--line); background:var(--panel); color:var(--ink); border-radius:6px; cursor:pointer; }
+input, textarea { background:var(--panel); color:var(--ink); }
+button:hover { border-color:var(--accent); }
+button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+#bar { position:sticky; top:0; z-index:100000; display:flex; flex-wrap:wrap; gap:.5rem; align-items:center;
+  padding:.5rem .75rem; background:var(--panel); border-bottom:1px solid var(--line); }
+.tools { display:flex; flex-wrap:wrap; gap:.35rem; flex:1; }
+.right { display:flex; gap:.4rem; align-items:center; margin-left:auto; }
+#status { font-size:.8rem; color:var(--muted); }
+#hint { padding:.3rem .75rem; font-size:.8rem; color:var(--muted); }
+
+#page { position:relative; min-height:calc(100vh - 6rem); overflow-x:auto;
+  background-image:radial-gradient(var(--dot) 1px, transparent 1px); background-size:24px 24px; }
+body.placing #page { cursor:crosshair; }
+
+.item { position:absolute; background:var(--card); border:1px solid var(--line); border-radius:8px;
+  box-shadow:0 2px 6px #0002; max-width:calc(100vw - 8px); display:flex; flex-direction:column; }
+.item > header { display:flex; align-items:center; gap:.3rem; padding:.15rem .3rem; background:var(--head);
+  border-radius:8px 8px 0 0; cursor:grab; touch-action:none; font-size:.8rem; user-select:none; flex-wrap:wrap; }
+.item > header .grow { flex:1; }
+.item > header button { padding:0 .4em; font-size:.8rem; }
+.item > header input[type=color] { width:1.8rem; height:1.4rem; padding:0; border:0; }
+.item > header input[type=range] { width:5rem; }
+.body { padding:.4rem; overflow:auto; }
+
+.note .body { min-width:12rem; min-height:4rem; white-space:pre-wrap; outline:none; resize:both; }
+.calc .body { display:flex; flex-direction:column; gap:.3rem; min-width:14rem; }
+.calc input { width:100%; padding:.3rem; border:1px solid var(--line); border-radius:4px; font-family:monospace; }
+.calc .res { font:1.3rem monospace; min-height:1.6rem; }
+.calc .res.bad { color:#c33; font-size:.9rem; }
+.repl .body { display:flex; flex-direction:column; gap:.3rem; width:min(28rem, calc(100vw - 24px)); }
+.repl textarea { width:100%; min-height:5rem; font:13px monospace; resize:vertical; }
+.repl pre { margin:0; padding:.3rem; background:#111; color:#9f9; font:13px monospace; max-height:12rem;
+  overflow:auto; white-space:pre-wrap; min-height:2rem; }
+.media .body { padding:0; resize:both; overflow:hidden; width:300px; height:200px; min-width:80px; min-height:40px; }
+.media img, .media video { width:100%; height:100%; object-fit:contain; display:block; }
+.media audio { width:100%; }
+.media iframe { width:100%; height:100%; border:0; }
+.draw .body { padding:0; }
+.draw canvas { display:block; background:#fff; image-rendering:pixelated; max-width:none; }
+.draw canvas.on { touch-action:none; cursor:crosshair; }
+
+#vault { position:relative; min-height:calc(100vh - 6rem); overflow:hidden; }
+#cipher { margin:0; padding:1rem; white-space:pre-wrap; word-break:break-all; filter:blur(6px); user-select:none;
+  font:12px monospace; color:var(--ink); pointer-events:none; }
+.vault-msg { position:fixed; inset:30% 0 auto 0; text-align:center; font-size:1.4rem; }
+
+dialog { background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:10px; padding:1rem; width:min(22rem, 92vw); }
+dialog input { display:block; width:100%; margin:.4rem 0; padding:.4rem; }
+dialog menu { display:flex; justify-content:flex-end; gap:.5rem; padding:0; margin:.5rem 0 0; }
+.err { color:#c33; margin:0; min-height:1em; font-size:.85rem; }
+
+@media (max-width:600px) {
+  .brand { display:none; }
+  #bar { padding:.4rem; }
+}
