@@ -1,0 +1,10 @@
+C:\Projects\capnslog\target\debug\deps\log-9dcecd61f00fbbeb.d: C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\lib.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\macros.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\serde.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\__private_api.rs
+
+C:\Projects\capnslog\target\debug\deps\liblog-9dcecd61f00fbbeb.rlib: C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\lib.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\macros.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\serde.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\__private_api.rs
+
+C:\Projects\capnslog\target\debug\deps\liblog-9dcecd61f00fbbeb.rmeta: C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\lib.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\macros.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\serde.rs C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\__private_api.rs
+
+C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\lib.rs:
+C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\macros.rs:
+C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\serde.rs:
+C:\Users\Ron\ Pond\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.34\src\__private_api.rs:

@@ -1,0 +1,10 @@
+{
+  "name": "Capnslog",
+  "short_name": "Capnslog",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbf9f3",
+  "theme_color": "#fbf9f3",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

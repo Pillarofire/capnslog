@@ -1,0 +1,17 @@
+[Unit]
+Description=Capnslog encrypted notebook server
+After=network-online.target
+
+[Service]
+User=capnslog
+ExecStart=/usr/local/bin/capnslog --bind 127.0.0.1:8080 --data-dir /var/lib/capnslog
+Restart=always
+StateDirectory=capnslog
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/capnslog
+
+[Install]
+WantedBy=multi-user.target

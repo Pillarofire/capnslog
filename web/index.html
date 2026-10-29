@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f1ea">
+<title>Capnslog</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header id="bar" hidden>
+  <strong class="brand">Capnslog</strong>
+  <div class="tools" id="tools">
+    <button id="sideBtn" title="Sections sidebar" aria-label="Toggle sections sidebar">☰</button>
+    <button data-tool="note" title="Add a note at the end">📝 Note</button>
+    <button data-tool="draw" title="Add an ink area">✏️ Ink</button>
+    <button data-tool="calc">🧮 Calc</button>
+    <button data-tool="repl">⌨️ JS</button>
+    <button data-tool="media">🖼️ Media</button>
+    <button data-tool="url">🔗 URL</button>
+  </div>
+  <input id="search" type="search" placeholder="Search notes…" autocomplete="off" aria-label="Search">
+  <input id="jump" type="date" title="Jump to date" aria-label="Jump to date">
+  <div class="right">
+    <span id="status"></span>
+    <button id="theme" title="Toggle dark theme">🌙</button>
+    <button id="settingsBtn" title="Settings">⚙️</button>
+    <button id="lock" title="Lock now">🔒</button>
+  </div>
+</header>
+<div id="results" hidden></div>
+<div id="filterbar" hidden><span id="filterName"></span> <button id="filterClear" type="button">Show all</button></div>
+<aside id="side" hidden aria-label="Sections">
+  <div class="sidehead"><strong>Sections</strong><span><button id="sideAdd" type="button" title="New section">＋</button><button id="sideHide" type="button" title="Hide sidebar">«</button></span></div>
+  <nav id="sideTree"></nav>
+</aside>
+
+<main id="page" hidden></main>
+<div id="tail" hidden title="Click to write at the end"></div>
+<button id="fab" hidden title="New note">＋</button>
+
+<section id="gate">
+  <form id="gateForm" autocomplete="off">
+    <h1>🔒 Capnslog</h1>
+    <p id="gateMsg" class="muted">Loading…</p>
+    <input type="text" id="gateUser" autocomplete="username" value="capnslog" hidden>
+    <input type="password" id="gatePass" autocomplete="current-password" placeholder="Passkey" hidden>
+    <input type="password" id="gatePass2" autocomplete="new-password" placeholder="Confirm passkey" hidden>
+    <input type="password" id="gateToken" placeholder="Access token (if the server requires one)" hidden>
+    <p id="gateWarn" class="warn" hidden>Your notes are encrypted in this browser. The server never sees your passkey. <b>If you forget it, your notes cannot be recovered.</b></p>
+    <p id="gateErr" class="err"></p>
+    <button id="gateGo" type="submit" hidden>Unlock</button>
+  </form>
+</section>
+
+<dialog id="settings">
+  <form method="dialog">
+    <h3>Settings</h3>
+    <label class="chk"><input type="checkbox" id="setCode"> Enable calculator and JS cells</label>
+    <label>Auto-lock after (minutes, 0 = never) <input type="number" id="setLock" min="0" max="1440"></label>
+    <label>Clicking a section in the sidebar
+      <select id="setClick"><option value="scroll">scrolls to its first block</option><option value="filter">filters the timeline to it</option></select>
+    </label>
+    <p><button type="button" id="importBtn">Import OneNote (.docx)…</button></p>
+    <label>Access token <input type="password" id="setToken" autocomplete="off"></label>
+    <p><a href="/api/export" download="capnslog-export.json">Download encrypted backup</a></p>
+    <p><button type="button" id="resetCache">Reset local cache</button></p>
+    <menu><button value="ok">Close</button></menu>
+  </form>
+</dialog>
+
+<input type="file" id="file" accept="image/*,video/*,audio/*" hidden>
+<input type="file" id="docx" accept=".docx" multiple hidden>
+<script type="module" src="app.js"></script>
+</body>
+</html>
