@@ -1,1 +1,0 @@
-C:\Projects\capnslog\target\debug\capnslog.exe: C:\Projects\capnslog\src\api.rs C:\Projects\capnslog\src\assets.rs C:\Projects\capnslog\src\lib.rs C:\Projects\capnslog\src\main.rs C:\Projects\capnslog\src\store.rs
